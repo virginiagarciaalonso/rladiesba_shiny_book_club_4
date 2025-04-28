@@ -1,6 +1,6 @@
 ---
-title: "rladiesba_shiny_book_club_4"
-author: "Jesica Formoso & María Nanton"
+title: "Layout, themes, HTML (capítulo 6)"
+author: "Luis Verde Arregoitia & Virginia García Alonso"
 format: 
   revealjs:
     theme: slides.scss
@@ -12,31 +12,38 @@ execute:
   warning: false
   eval: false
 ---
-## 6.1 Introducción
+## Objetivos de este capítulo
 
 Descubrir herramientas para controlar la apariencia general de la app.
 
-1. Diseños de página (tanto simples como «múltiples») 
+## Hoja de ruta 
+
+1. Diseños de página
+
 2. Cómo personalizar la visualización mediante el uso de "temas"
-3. Breve discusión de lo que hay detrás y cómo modificar aspectos visuales
-  - Bootstrap
-  - HTML y CSS 
+
+3. Qué hay "detrás" y cómo modificar aspectos visuales
+
 4. Materiales de interés
 
-## 1.1 Single page layouts
+## 1. Diseños de página
+
+Explicar a que hace referencia
+
+## 1.1 Diseño de páginas simples
 
 Mostrar la app hello world y el primer layout y darle ‘inspect’ en el navegador
 explicar y definir  fluid design y mostrar ejemplos
 12 column grid (because the number 12 has more divisors than any number before it or after it, up until the number 60)
 
-## 1.2. Multi-page layouts
+## 1.2. Diseño de páginas multiples
 
 anidamiento de tabs
 opcion the navlistPanel/navbarPage (modo vertical)
 
 
 
-## 2. Themes
+## 2. Temas
 
 no viene en el libro pero mencionar brand_yml que va a ser lo más usado y le pasa los parámetros a bslib *mostrar el diagrama de jerarquía
 thematic?
