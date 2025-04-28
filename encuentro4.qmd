@@ -26,13 +26,47 @@ Descubrir herramientas para controlar la apariencia general de la app.
 
 4. Materiales de interés
 
+##
+
+Las aplicaciones de Shiny tienen un aspecto predeterminado bastante simple y genérico
+
+![](https://mastering-shiny.org/demos/basic-ui/numeric.png)
+
+- Podemos usar herramientas de diseño web para personalizar nuestras aplicaciones independientemente del código de R subyacente  
+
+##
+
+
 ## 1. Diseños de página
 
 Explicar a que hace referencia
 
 ## 1.1 Diseño de páginas simples
 
-Mostrar la app hello world y el primer layout y darle ‘inspect’ en el navegador
+Hasta ahora todos los ejemplos del libro siguen una disposición de una sola página, construido con `fluidPage()`
+
+## **Fluid** design
+
+Estilo de diseño web que usa unidades relativas para acomodar elementos en la pantalla y mantener siempre los mismos elementos visibles en pantallas de diferentes tamaños.
+
+Organiza todo el contenido en 12 columnas (12 se puede dividir en 2, 3, 4, y 6)
+
+> Existen otras opciones 
+
+## 
+
+- Las aplicaciones ultimadamente se despliegan en un navegador web
+
+- Podemos usar herramientas de diseño web para personalizar nuestras aplicaciones independientemente del código de R subyacente  
+
+## Hola mundo
+
+`ctrl+shift+I`
+
+![](imgs/inspector.png)
+
+##
+
 explicar y definir  fluid design y mostrar ejemplos
 12 column grid (because the number 12 has more divisors than any number before it or after it, up until the number 60)
 
@@ -42,6 +76,25 @@ anidamiento de tabs
 opcion the navlistPanel/navbarPage (modo vertical)
 
 
+## Jerarquía y elementos anidados
+
+```{r}
+#| eval: false
+
+fluidPage( # una sola página, ya genera el HTML, CSS y js necesario
+  titlePanel(),
+  sidebarLayout(
+    sidebarPanel(), # controles de un lado
+    mainPanel() # resultados aquí
+  )
+)
+
+```
+
+
+##
+
+![](https://mastering-shiny.org/diagrams/action-layout/sidebar.png)
 
 ## 2. Temas
 
@@ -56,8 +109,33 @@ mostrar los themes en bootswatch
 
 - Bootstrap es una colección de convenciones HTML, estilos CSS y fragmentos JS agrupados de forma práctica.
 
+##
 
-- correr un ejemplo sencillo en w3school
+Proyecto bootswatch
+
+```{r}
+#| eval: false
+
+ fluidPage(
+  theme = bslib::bs_theme(bootswatch = "darkly")
+ )
+```
+
+##
+
+No todo es bootstrap
+
+![Semantic](https://connect.appsilon.com/shiny-semantic-components/)
+
+##
+
+Todas las funciones de _input_, _output_ y _layout_ generan HTML
+
+## 
+
+#### Ejemplo interactivo simple de css y html
+
+[css en w3schools](https://www.w3schools.com/html/tryit.asp?filename=tryhtml_css_inline)
 
 ## 4. Material de interés
 
