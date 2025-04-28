@@ -29,6 +29,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="encuentro4_files/libs/revealjs/dist/theme/quarto.css">
   <link href="encuentro4_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -350,18 +415,69 @@ Luis Verde Arregoitia &amp; Virginia García Alonso
 <li><p>Materiales de interés</p></li>
 </ol>
 </section>
+<section id="section" class="slide level2">
+<h2></h2>
+<p>Las aplicaciones de Shiny tienen un aspecto predeterminado bastante simple y genérico</p>
+
+<img data-src="https://mastering-shiny.org/demos/basic-ui/numeric.png" class="r-stretch"><ul>
+<li>Podemos usar herramientas de diseño web para personalizar nuestras aplicaciones independientemente del código de R subyacente</li>
+</ul>
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+</section>
 <section id="diseños-de-página" class="slide level2">
 <h2>1. Diseños de página</h2>
 <p>Explicar a que hace referencia</p>
 </section>
 <section id="diseño-de-páginas-simples" class="slide level2">
 <h2>1.1 Diseño de páginas simples</h2>
-<p>Mostrar la app hello world y el primer layout y darle ‘inspect’ en el navegador explicar y definir fluid design y mostrar ejemplos 12 column grid (because the number 12 has more divisors than any number before it or after it, up until the number 60)</p>
+<p>Hasta ahora todos los ejemplos del libro siguen una disposición de una sola página, construido con <code>fluidPage()</code></p>
+</section>
+<section id="fluid-design" class="slide level2">
+<h2><strong>Fluid</strong> design</h2>
+<p>Estilo de diseño web que usa unidades relativas para acomodar elementos en la pantalla y mantener siempre los mismos elementos visibles en pantallas de diferentes tamaños.</p>
+<p>Organiza todo el contenido en 12 columnas (12 se puede dividir en 2, 3, 4, y 6)</p>
+<blockquote>
+<p>Existen otras opciones</p>
+</blockquote>
+</section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+<ul>
+<li><p>Las aplicaciones ultimadamente se despliegan en un navegador web</p></li>
+<li><p>Podemos usar herramientas de diseño web para personalizar nuestras aplicaciones independientemente del código de R subyacente</p></li>
+</ul>
+</section>
+<section id="hola-mundo" class="slide level2">
+<h2>Hola mundo</h2>
+<p><code>ctrl+shift+I</code></p>
+
+<img data-src="imgs/inspector.png" class="r-stretch"></section>
+<section id="section-3" class="slide level2">
+<h2></h2>
+<p>explicar y definir fluid design y mostrar ejemplos 12 column grid (because the number 12 has more divisors than any number before it or after it, up until the number 60)</p>
 </section>
 <section id="diseño-de-páginas-multiples" class="slide level2">
 <h2>1.2. Diseño de páginas multiples</h2>
 <p>anidamiento de tabs opcion the navlistPanel/navbarPage (modo vertical)</p>
 </section>
+<section id="jerarquía-y-elementos-anidados" class="slide level2">
+<h2>Jerarquía y elementos anidados</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="fu">fluidPage</span>( <span class="co"># una sola página, ya genera el HTML, CSS y js necesario</span></span>
+<span id="cb1-2"><a href=""></a>  <span class="fu">titlePanel</span>(),</span>
+<span id="cb1-3"><a href=""></a>  <span class="fu">sidebarLayout</span>(</span>
+<span id="cb1-4"><a href=""></a>    <span class="fu">sidebarPanel</span>(), <span class="co"># controles de un lado</span></span>
+<span id="cb1-5"><a href=""></a>    <span class="fu">mainPanel</span>() <span class="co"># resultados aquí</span></span>
+<span id="cb1-6"><a href=""></a>  )</span>
+<span id="cb1-7"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="section-4" class="slide level2">
+<h2></h2>
+
+<img data-src="https://mastering-shiny.org/diagrams/action-layout/sidebar.png" class="r-stretch"></section>
 <section id="temas" class="slide level2">
 <h2>2. Temas</h2>
 <p>no viene en el libro pero mencionar brand_yml que va a ser lo más usado y le pasa los parámetros a bslib *mostrar el diagrama de jerarquía thematic? mostrar los themes en bootswatch</p>
@@ -371,8 +487,30 @@ Luis Verde Arregoitia &amp; Virginia García Alonso
 <ul>
 <li><p>breve mención a que son los componentes de estilo (solo para tener una idea de que son HTML y CSS) y así se entienda que es bootstrap</p></li>
 <li><p>Bootstrap es una colección de convenciones HTML, estilos CSS y fragmentos JS agrupados de forma práctica.</p></li>
-<li><p>correr un ejemplo sencillo en w3school</p></li>
 </ul>
+</section>
+<section id="section-5" class="slide level2">
+<h2></h2>
+<p>Proyecto bootswatch</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href=""></a> <span class="fu">fluidPage</span>(</span>
+<span id="cb2-2"><a href=""></a>  <span class="at">theme =</span> bslib<span class="sc">::</span><span class="fu">bs_theme</span>(<span class="at">bootswatch =</span> <span class="st">"darkly"</span>)</span>
+<span id="cb2-3"><a href=""></a> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="section-6" class="slide level2">
+<h2></h2>
+<p>No todo es bootstrap</p>
+
+<img data-src="https://connect.appsilon.com/shiny-semantic-components/.png" class="r-stretch quarto-figure-center"><p class="caption">Semantic</p></section>
+<section id="section-7" class="slide level2">
+<h2></h2>
+<p>Todas las funciones de <em>input</em>, <em>output</em> y <em>layout</em> generan HTML</p>
+</section>
+<section id="section-8" class="slide level2">
+<h2></h2>
+<h4 id="ejemplo-interactivo-simple-de-css-y-html">Ejemplo interactivo simple de css y html</h4>
+<p><a href="https://www.w3schools.com/html/tryit.asp?filename=tryhtml_css_inline">css en w3schools</a></p>
 </section>
 <section id="material-de-interés" class="slide level2">
 <h2>4. Material de interés</h2>
@@ -593,6 +731,82 @@ Luis Verde Arregoitia &amp; Virginia García Alonso
         ]
       });
     </script>
+    
+
+    <script>
+
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+
+      // slide changes (different for each slide format).
+
+      (function () {
+
+        // dispatch for htmlwidgets
+
+        function fireSlideEnter() {
+
+          const event = window.document.createEvent("Event");
+
+          event.initEvent("slideenter", true, true);
+
+          window.document.dispatchEvent(event);
+
+        }
+
+    
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          fireSlideEnter();
+
+    
+
+          // dispatch for shiny
+
+          if (window.jQuery) {
+
+            if (previousSlide) {
+
+              window.jQuery(previousSlide).trigger("hidden");
+
+            }
+
+            if (currentSlide) {
+
+              window.jQuery(currentSlide).trigger("shown");
+
+            }
+
+          }
+
+        }
+
+    
+
+        // hookup for slidy
+
+        if (window.w3c_slidy) {
+
+          window.w3c_slidy.add_observer(function (slide_num) {
+
+            // slide_num starts at position 1
+
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+
+          });
+
+        }
+
+    
+
+      })();
+
+    </script>
+
+    
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
