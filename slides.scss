@@ -72,6 +72,16 @@ $min-contrast-ratio:   7;
   padding-bottom: 3em !important;
 }
 
+.h2-italica {
+  padding-bottom: 3em !important;
+  font-weight: bold;
+}
+
+.h2-negrita {
+  padding-bottom: 3em !important;
+  font-style: italic;
+}
+
 .subtitle {
   font-size: $heading3Size;
   font-weight: bold;
@@ -80,19 +90,20 @@ $min-contrast-ratio:   7;
 
 .reveal .slide h1, 
 .reveal .slide h2 {
-  margin-top: 1.5em; 
+  margin-top: 0.5em; 
   margin-bottom: 1.1em; 
 }
 
 
 
 #title-slide .subtitle {
-  margin-top: 6rem;
+  margin-top: 9rem;
   line-height: 1.8;
 }
 
 .quarto-title-author-name {
   font-size: $heading3Size;
+  padding-top: 3em;
 }
 
 .reveal div.sourceCode {
