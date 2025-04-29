@@ -16,6 +16,12 @@ execute:
 
 Descubrir herramientas para controlar la apariencia general de la app.
 
+<br>
+
+
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExeTgwMmo2bW90cjMyNHkxZmF5ejhwem9maXV1OTBsbHZwNm1yZ3ZreCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Kd9IQloZWxEEU/giphy.gif){.center}
+
+
 ## Hoja de ruta 
 
 1. Diseños de página
@@ -32,10 +38,9 @@ Las aplicaciones de Shiny tienen un aspecto predeterminado bastante simple y gen
 
 ![](https://mastering-shiny.org/demos/basic-ui/numeric.png)
 
-- Podemos usar herramientas de diseño web para personalizar nuestras aplicaciones independientemente del código de R subyacente  
+<p align="center"><mark style="background-color:#aabbff">Podemos usar herramientas de diseño web para personalizar nuestras aplicaciones independientemente del código de R subyacente :)</mark></p>
 
-
-## Elementos a personalizar {.section}
+## Elementos a personalizar {.section .vertical-center}
 
 
 ## 1. Diseños de página
@@ -96,7 +101,11 @@ Es **clave** entender/mantener el espaciado que delimita las jerarquías.
 
 Es un estilo de diseño web que usa **unidades relativas** para acomodar elementos en la pantalla y mantener siempre los mismos elementos visibles en pantallas de diferentes tamaños.
 
+<br>
+
 Organiza todo el contenido en 12 columnas (12 se puede dividir en 2, 3, 4, y 6)
+
+<br>
 
 > Existen otras opciones 
 
@@ -106,7 +115,7 @@ El ejemplo anterior de diseño constaba de una única fila de contenido con dos 
 
 Por default la relación de tamaño de esos elementos es 1/3
 
-![](https://mastering-shiny.org/diagrams/action-layout/sidebar.png)
+![](https://mastering-shiny.org/diagrams/action-layout/sidebar.png){.center}
 
 ##
 
@@ -155,7 +164,7 @@ HASTA ACA LLEGUE!!
 
 `ctrl+shift+I`
 
-![](imgs/inspector.png)
+![](imgs/inspector.png){.center}
 
 
 ## 1.2. Diseño de páginas multiples

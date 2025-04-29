@@ -72,16 +72,6 @@ $min-contrast-ratio:   7;
   padding-bottom: 3em !important;
 }
 
-.h2-italica {
-  padding-bottom: 3em !important;
-  font-weight: bold;
-}
-
-.h2-negrita {
-  padding-bottom: 3em !important;
-  font-style: italic;
-}
-
 .subtitle {
   font-size: $heading3Size;
   font-weight: bold;
@@ -197,4 +187,19 @@ $min-contrast-ratio:   7;
 .reveal h2.compact-title {
   margin-top: 0em !important; // Ajusta según la reducción de espacio que desees
   margin-bottom: 0em !important;
+}
+
+// center text vertically
+.vertical-center {
+  margin: auto;
+  position: absolute;
+  top: 30%;
+  -ms-transform: translateY(-30%);
+  transform: translateY(-30%);
+}
+
+
+// add color to text background
+.orange {
+  color: $orange;
 }
