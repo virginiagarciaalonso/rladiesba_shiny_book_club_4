@@ -73,13 +73,13 @@ Los diseños se crean mediante una jerarquía de llamadas a funciones.
 
 ::::: columns
 
-::: {.column width="50%"}
+::: {.column width="60%"}
 ```{r}
 #| eval: false
 
 fluidPage( # una sola página, ya genera el HTML, CSS y js necesario
-  titlePanel(),
-  sidebarLayout(
+  titlePanel(), # cajita para el título de la app
+  sidebarLayout( # panel dividido en dos
     sidebarPanel(), # controles de un lado
     mainPanel() # resultados aquí
   )
@@ -89,7 +89,7 @@ fluidPage( # una sola página, ya genera el HTML, CSS y js necesario
 :::
 
 
-::: {.column width="50%"}
+::: {.column width="40%"}
 ![](https://mastering-shiny.org/diagrams/action-layout/sidebar.png)
 :::
 
@@ -298,20 +298,96 @@ ui <- navbarPage(
 
 ## 2. Temas
 
-no viene en el libro pero mencionar brand_yml que va a ser lo más usado y le pasa los parámetros a bslib *mostrar el diagrama de jerarquía
-thematic?
-mostrar los themes en bootswatch 
+
+## brand.yml
+
+Identidad visual portatil y simple para Shiny y Quarto
+
+::: columns
+::: {.column width="20%"}
+![](https://posit-dev.github.io/brand-yml/logos/tall/brand-yml-tall-color.svg)
+:::
+
+::: {.column width="80%"}
+
+- colores
+- logos
+- fuentes
+
+:::
+:::
+
+
+##
+
+![](imgs/brand.png){.center}
+
+
+## thematic
+
 
 
 ## 3. Que hay detrás: componentes de estilo
 
-- breve mención a que son los componentes de estilo (solo para tener una idea de que son HTML y CSS) y así se entienda que es bootstrap
+### css (Cascading Style Sheets)
+
+- Lenguaje que maneja el diseño y presentación de las páginas web
+
+- Puede especificarse:
+  - Por separado en un archivo de hoja de estilo
+  - Junto con el código HTML en un contenedor de estilo (`<style>`)
+  - Para un elemento puntual
+  
+##
+
+::: columns
+::: {.column width="50%"}
+
+### HTML
+
+```{html}
+<div class="cajarosa">
+  <p>
+Texto en una caja con relleno de color rosa
+  </p>
+</div>
+```
+
+
+
+:::
+
+::: {.column width="50%"}
+
+### css
+
+```{css}
+.cajarosa {
+  border: 1px solid #333;
+  background-color: #F8C8DC;
+}
+```
+:::
+:::
+
+
+### Resultado
+
+::: {.cajarosa}
+
+Texto en una caja con relleno de color rosa
+
+:::
+
+## bootstrap
 
 - Bootstrap es una colección de convenciones HTML, estilos CSS y fragmentos JS agrupados de forma práctica.
 
-##
 
-Proyecto bootswatch
+
+## Proyecto [bootswatch](https://bootswatch.com/)
+
+'Themes' gratuitos para bootstrap, licencia MIT
 
 ```{r}
 #| eval: false
@@ -325,7 +401,9 @@ Proyecto bootswatch
 
 No todo es bootstrap
 
-![Semantic](https://connect.appsilon.com/shiny-semantic-components/)
+Shiny [Semantic](https://connect.appsilon.com/shiny-semantic-components/) de Appsilon
+
+
 
 ##
 
