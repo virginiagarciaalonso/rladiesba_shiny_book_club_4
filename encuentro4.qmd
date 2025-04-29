@@ -142,7 +142,7 @@ fluidPage(
 :::
 
 ::: {.column width="50%"}
-![](https://programminghistorian.org/images/shiny-leaflet-newspaper-map-tutorial/shiny-leaflet-newspaper-map-tutorial-3.png)
+![Imagen de programminghistorian.org](https://programminghistorian.org/images/shiny-leaflet-newspaper-map-tutorial/shiny-leaflet-newspaper-map-tutorial-3.png)
 :::
 
 :::::
