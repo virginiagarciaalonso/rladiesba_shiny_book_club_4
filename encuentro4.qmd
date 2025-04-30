@@ -107,13 +107,13 @@ Organiza todo el contenido en 12 columnas (12 se puede dividir en 2, 3, 4, y 6)
 
 <br>
 
-> Existen otras opciones 
+> Existen otras opciones (`fillPage()`,  `fixedPage()`)
 
 ## Caso 1:  una fila (sidebar)
 
 El ejemplo anterior de diseño constaba de una única fila de contenido con dos elementos
 
-Por default la relación de tamaño de esos elementos es 1/3
+Por defecto la relación de tamaño de esos elementos es 1/3
 
 ![](https://mastering-shiny.org/diagrams/action-layout/sidebar.png){.center}
 
@@ -147,7 +147,7 @@ fluidPage(
 
 :::::
 
-Ahora cada elemento del sidebar ocupa el 50% que equivale a 6 (12/2)
+cada elemento del sidebar ocupa 50%, que equivale a 6 (12/2)
 
 
 ## Caso 2: varias filas (fluidrow)
@@ -298,6 +298,23 @@ ui <- navbarPage(
 
 ## 2. Temas
 
+- La configuración inicial que se aplica a un documento o en este caso, una aplicación.
+
+- Determina su estilo visual por defecto
+
+- Convenciones y estilos diseñados para distintos fines
+
+## bslib
+
+- Paquete con funciones para cambiar los valores predeterminados
+
+- Sigue convenciones bootstrap y nos sirve para elegir apariencias existentes
+
+
+## Aplicación en dark theme
+
+> 'darkly' de bootswatch y `thematic` que le aplica estos valores a figuras de ggplot, base, lattice, etc.
+
 
 ## brand.yml
 
@@ -321,10 +338,6 @@ Identidad visual portatil y simple para Shiny y Quarto
 ##
 
 ![](imgs/brand.png){.center}
-
-
-## thematic
-
 
 
 ## 3. Que hay detrás: componentes de estilo
@@ -384,7 +397,6 @@ Texto en una caja con relleno de color rosa
 - Bootstrap es una colección de convenciones HTML, estilos CSS y fragmentos JS agrupados de forma práctica.
 
 
-
 ## Proyecto [bootswatch](https://bootswatch.com/)
 
 'Themes' gratuitos para bootstrap, licencia MIT
@@ -397,13 +409,11 @@ Texto en una caja con relleno de color rosa
  )
 ```
 
-##
+## No todo es bootstrap
 
-No todo es bootstrap
+- Shiny [Semantic](https://connect.appsilon.com/shiny-semantic-components/) de Appsilon
 
-Shiny [Semantic](https://connect.appsilon.com/shiny-semantic-components/) de Appsilon
-
-
+- Shiny bulma (ej)
 
 ##
 
