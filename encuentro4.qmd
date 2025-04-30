@@ -5,6 +5,8 @@ format:
   revealjs:
     theme: slides.scss
     code-block-height: 600px
+title-slide-attributes:
+  data-background-color: "#4c074d"
 editor: 
   mode: source
 execute: 
@@ -24,13 +26,19 @@ Descubrir herramientas para controlar la apariencia general de la app.
 
 ## Hoja de ruta 
 
-1. Diseños de página
+<br>
 
-2. Cómo personalizar la visualización mediante el uso de "temas"
+**Elementos a personalizar**
 
-3. Qué hay "detrás" y cómo modificar aspectos visuales
+&emsp; 1. Diseños de página
 
-4. Materiales de interés
+&emsp; 2. Cómo personalizar la visualización mediante el uso de "temas"
+
+&emsp; 3. Qué hay "detrás" y cómo modificar aspectos visuales
+
+<br>
+
+**Materiales de interés**
 
 ##
 
@@ -39,6 +47,7 @@ Las aplicaciones de Shiny tienen un aspecto predeterminado bastante simple y gen
 ![](imgs/numeric.png){.center}
 
 <p align="center"><mark style="background-color:#aabbff">Podemos usar herramientas de diseño web para personalizar nuestras aplicaciones independientemente del código de R subyacente :)</mark></p>
+
 
 ## Elementos a personalizar {.section .vertical-center}
 
@@ -71,11 +80,14 @@ Dentro de ese diseño de página simple se pueden modificar:
 
 Los diseños se crean mediante una jerarquía de llamadas a funciones. 
 
+<br>
+
 ::::: columns
 
 ::: {.column width="60%"}
 ```{r}
 #| eval: false
+#| code-line-numbers: "|1|2,3|4,5"
 
 fluidPage( # una sola página, ya genera el HTML, CSS y js necesario
   titlePanel(), # cajita para el título de la app
@@ -103,7 +115,7 @@ Es un estilo de diseño web que usa **unidades relativas** para acomodar element
 
 <br>
 
-Organiza todo el contenido en 12 columnas (12 se puede dividir en 2, 3, 4, y 6)
+Organiza todo el contenido en **12 columnas** (12 se puede dividir en 2, 3, 4, y 6)
 
 <br>
 
@@ -113,7 +125,9 @@ Organiza todo el contenido en 12 columnas (12 se puede dividir en 2, 3, 4, y 6)
 
 El ejemplo anterior de diseño constaba de una única fila de contenido con dos elementos
 
-Por defecto la relación de tamaño de esos elementos es 1/3
+Por defecto la **relación de tamaño** de esos elementos es 1/3
+
+<br>
 
 ![](https://mastering-shiny.org/diagrams/action-layout/sidebar.png){.center}
 
@@ -162,13 +176,18 @@ Este diseño se puede utilizar directamente para crear aplicaciones visualmente 
 
 
 ##
-Se empieza con fluidPage(), luego se crean filas con fluidRow(), y columnas con column().
+::::: columns
+::: {.space}
+Se crean filas con fluidRow() y columnas dentro de las filas con column().
+:::
+:::::
 
 ::::: columns
 
 ::: {.column width="50%"}
 ```{r}
 #| eval: false
+#| code-line-numbers: "2,6|3,4,7,8"
 
 fluidPage(
   fluidRow(
@@ -194,16 +213,23 @@ Aquí el ancho de los paneles se define en el primer elemento de `column`.
 
 
 ## 1.2. Diseño de páginas multiples 
+<br>
 
-Muchas veces las applicaciones crecen en complejidad y la cantidad de elemntos que se quieren mostrar no entran en una única página.
+Muchas veces las applicaciones crecen en complejidad y la cantidad de elementos que se quieren mostrar **no entran en una única página**.
 
+<br>
 <br>
 
 <p align="center" style="background-color:#aabbff">Por suerte es posible generar la ilusión de *numerosas páginas* en una única aplicación!</p>
 
 ## Caso 1: pestañas (tabsets)
 
-Permite seleccionar y ver una pestaña a la vez. Se declara que sea un "tabset" con tabsetPanel() y a cada pestaña con tabPanel().
+::::: columns
+::: {.space}
+Permite seleccionar y ver una pestaña a la vez. Se declara que sea un **tabset** con tabsetPanel() y a cada pestaña con tabPanel().
+:::
+::::: 
+
 
 ::::: columns
 
@@ -235,15 +261,18 @@ ui <- fluidPage(
 ::::
 
 ## Caso 2A: navlist
-
-Genera una "tabla de contenidos" vertical. Se declara que sea una lista con navlistPanel() y se agregan los títulos y sus pestañas con tabPanel().
+::::: columns
+::: {.space}
+Genera una "tabla de contenidos" **vertical**. Se declara que sea una lista con navlistPanel() y se agregan los títulos y sus pestañas con tabPanel().
+:::
+:::::
 
 ::::: columns
 
 ::: {.column width="50%"}
 ```{r}
 #| eval: false
-#| code-line-numbers: "|2|4,5|6,7,8"
+#| code-line-numbers: "|2|4,6|5,7,8"
 
 ui <- fluidPage(
   navlistPanel(
@@ -266,8 +295,11 @@ ui <- fluidPage(
 ::::
 
 ## Caso 2B: navbar
-
-Genera una "tabla de contenidos" horizontal. En este caso se llama primero a navbarPage() (en vez de fluidPage) y se agregan pestañas con tabPanel() o menues deplegables con navbarMenu().
+::::: columns
+::: {.space}
+Genera una "tabla de contenidos" **horizontal**. En este caso se llama **primero a navbarPage()** (en vez de fluidPage) y se agregan pestañas con tabPanel() o menues deplegables con navbarMenu().
+:::
+:::::
 
 ::::: columns
 
@@ -383,6 +415,7 @@ Texto en una caja con relleno de color rosa
 :::
 :::
 
+<br>
 
 ### Resultado
 
@@ -437,8 +470,9 @@ Todas las funciones de _input_, _output_ y _layout_ generan HTML
 
 ![](imgs/inspector.png){.center}
 
+## Material de interés {.section .vertical-center}
 
-## 4. Material de interés
+##
 
 * Shiny [Application layout guide](https://shiny.posit.co/r/articles/build/layout-guide/)
 
@@ -447,3 +481,7 @@ Todas las funciones de _input_, _output_ y _layout_ generan HTML
 * Taller de Rmarkdown-ReinventarTec 2022
     + [HTML](https://rmarkdown-reinventartec-2022.netlify.app/)
     + [Código](https://github.com/RLadies-BA/Reinventartec-2022/blob/main/Rmarkdown_ReinventarTec.Rmd)
+    
+* [Código de esta presentación :)](https://github.com/virginiagarciaalonso/rladiesba_shiny_book_club_4)
+
+## Gracias! {.section  .vertical-center}

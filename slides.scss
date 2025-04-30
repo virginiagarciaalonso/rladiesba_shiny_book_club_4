@@ -12,6 +12,7 @@ $teal-dark2:  #76043d;
 $orange:      #9ac6c5;
 $orange-light:#a5e6ba;
 $orange-dark: #0cb397;
+$grey: #D3D3D3;
 
 // Background of the presentation
 $backgroundColor: $teal-light1;
@@ -68,6 +69,7 @@ $min-contrast-ratio:   7;
   text-decoration: underline !important;
 }
 
+
 .h2 {
   padding-bottom: 3em !important;
 }
@@ -75,24 +77,19 @@ $min-contrast-ratio:   7;
 .subtitle {
   font-size: $heading3Size;
   font-weight: bold;
-  margin-top: 1em;
+  margin-top: 0.5em;
 }
 
 .reveal .slide h1, 
 .reveal .slide h2 {
-  margin-top: 0.5em; 
-  margin-bottom: 1.1em; 
+  margin-top: 0.25em; 
+  margin-bottom: 0.5em; 
 }
 
-
-
-#title-slide .subtitle {
-  margin-top: 9rem;
-  line-height: 1.8;
-}
 
 .quarto-title-author-name {
   font-size: $heading3Size;
+  color: $grey;
   padding-top: 3em;
 }
 
@@ -135,7 +132,7 @@ $min-contrast-ratio:   7;
 
 .section {
   &:is(.slide-background) {
-  background: $orange-dark;
+  background: $teal-dark1;
   }
 }
 
@@ -198,6 +195,7 @@ $min-contrast-ratio:   7;
   transform: translateY(-30%);
 }
 
+// pink background 
 .cajarosa {
   border: 1px solid #333;
   background-color: #F8C8DC;
@@ -206,4 +204,9 @@ $min-contrast-ratio:   7;
 // add color to text background
 .orange {
   color: $orange;
+}
+
+// Extra space below text
+.space {              
+    margin-bottom: 1em;
 }
