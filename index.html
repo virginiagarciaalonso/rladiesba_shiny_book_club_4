@@ -633,14 +633,25 @@ Por suerte es posible generar la ilusión de <em>numerosas páginas</em> en una 
 </section>
 <section id="temas" class="slide level2">
 <h2>2. Temas</h2>
+<div class="columns">
+<div class="column" style="width:65%;">
 <ul>
 <li><p>La configuración inicial que se aplica a un documento o en este caso, una aplicación.</p></li>
 <li><p>Determina su estilo visual por defecto</p></li>
 <li><p>Convenciones y estilos diseñados para distintos fines</p></li>
 </ul>
+</div><div class="column" style="width:35%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="https://cdn.dribbble.com/userupload/41984310/file/original-ba35543c42260c5be54d12b9e99f5039.gif"></p>
+<figcaption>light/dark UI por Ryan David Curtis</figcaption>
+</figure>
+</div>
+</div></div>
 </section>
 <section id="bslib" class="slide level2">
 <h2>bslib</h2>
+<p><img src="https://rstudio.github.io/bslib/logo.png" align="right" height="108"></p>
 <ul>
 <li><p>Paquete con funciones para cambiar los valores predeterminados</p></li>
 <li><p>Sigue convenciones bootstrap y nos sirve para elegir apariencias existentes</p></li>
@@ -649,22 +660,35 @@ Por suerte es posible generar la ilusión de <em>numerosas páginas</em> en una 
 <section id="aplicación-en-dark-theme" class="slide level2">
 <h2>Aplicación en dark theme</h2>
 <blockquote>
-<p>‘darkly’ de bootswatch y <code>thematic</code> que le aplica estos valores a figuras de ggplot, base, lattice, etc.</p>
+<p>aplicamos ‘darkly’ de bootswatch con <code>bslib</code> y <code>thematic</code> para aplicarle los valores nuevos a figuras de ggplot, base, lattice, etc.</p>
 </blockquote>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb7-2"><a href=""></a>  <span class="at">theme =</span> bslib<span class="sc">::</span><span class="fu">bs_theme</span>(<span class="at">bootswatch =</span> <span class="st">"darkly"</span>),</span>
+<span id="cb7-3"><a href=""></a>  <span class="co"># el resto del ui...</span></span>
+<span id="cb7-4"><a href=""></a>  )</span>
+<span id="cb7-5"><a href=""></a></span>
+<span id="cb7-6"><a href=""></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
+<span id="cb7-7"><a href=""></a>  thematic<span class="sc">::</span><span class="fu">thematic_shiny</span>()</span>
+<span id="cb7-8"><a href=""></a>  <span class="co"># el resto del servidor... </span></span>
+<span id="cb7-9"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="brand.yml" class="slide level2">
 <h2>brand.yml</h2>
+<p><img src="https://posit-dev.github.io/brand-yml/logos/tall/brand-yml-tall-color.svg" align="right" height="108"></p>
 <p>Identidad visual portatil y simple para Shiny y Quarto</p>
-<div class="columns">
-<div class="column" style="width:20%;">
-<p><img data-src="https://posit-dev.github.io/brand-yml/logos/tall/brand-yml-tall-color.svg"></p>
-</div><div class="column" style="width:80%;">
 <ul>
 <li>colores</li>
 <li>logos</li>
 <li>fuentes</li>
 </ul>
-</div></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a>ui <span class="ot">&lt;-</span> <span class="fu">fluidPage</span>(</span>
+<span id="cb8-2"><a href=""></a>  <span class="at">theme =</span> bslib<span class="sc">::</span><span class="fu">bs_theme</span>(<span class="at">brand =</span> <span class="st">"mi-archivo-brand.yml"</span>),</span>
+<span id="cb8-3"><a href=""></a>  <span class="co"># ... resto del UI</span></span>
+<span id="cb8-4"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="section-3" class="slide level2">
 <h2></h2>
@@ -689,19 +713,19 @@ Por suerte es posible generar la ilusión de <em>numerosas páginas</em> en una 
 <div class="column" style="width:50%;">
 <h3 id="html">HTML</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb7-1"><a href=""></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"cajarosa"</span><span class="dt">&gt;</span></span>
-<span id="cb7-2"><a href=""></a>  <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span></span>
-<span id="cb7-3"><a href=""></a>Texto en una caja con relleno de color rosa</span>
-<span id="cb7-4"><a href=""></a>  <span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
-<span id="cb7-5"><a href=""></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb9-1"><a href=""></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"cajarosa"</span><span class="dt">&gt;</span></span>
+<span id="cb9-2"><a href=""></a>  <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb9-3"><a href=""></a>Texto en una caja con relleno de color rosa</span>
+<span id="cb9-4"><a href=""></a>  <span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb9-5"><a href=""></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:50%;">
 <h3 id="css">css</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb8-1"><a href=""></a><span class="fu">.cajarosa</span> {</span>
-<span id="cb8-2"><a href=""></a>  <span class="kw">border</span><span class="ch">:</span> <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">#333</span><span class="op">;</span></span>
-<span id="cb8-3"><a href=""></a>  <span class="kw">background-color</span><span class="ch">:</span> <span class="cn">#F8C8DC</span><span class="op">;</span></span>
-<span id="cb8-4"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb10-1"><a href=""></a><span class="fu">.cajarosa</span> {</span>
+<span id="cb10-2"><a href=""></a>  <span class="kw">border</span><span class="ch">:</span> <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">#333</span><span class="op">;</span></span>
+<span id="cb10-3"><a href=""></a>  <span class="kw">background-color</span><span class="ch">:</span> <span class="cn">#F8C8DC</span><span class="op">;</span></span>
+<span id="cb10-4"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div></div>
 <p><br></p>
@@ -712,40 +736,51 @@ Por suerte es posible generar la ilusión de <em>numerosas páginas</em> en una 
 </section>
 <section id="bootstrap" class="slide level2">
 <h2>bootstrap</h2>
+<p><img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow@2x.png" align="right" height="108"></p>
 <ul>
-<li>Bootstrap es una colección de convenciones HTML, estilos CSS y fragmentos JS agrupados de forma práctica.</li>
+<li><p>Una colección de convenciones HTML, estilos CSS y fragmentos JS agrupados de forma práctica.</p></li>
+<li><p>Las herramientas para ‘front end’ más usadas</p></li>
 </ul>
 </section>
 <section id="proyecto-bootswatch" class="slide level2">
 <h2>Proyecto <a href="https://bootswatch.com/">bootswatch</a></h2>
 <p>‘Themes’ gratuitos para bootstrap, licencia MIT</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a> <span class="fu">fluidPage</span>(</span>
-<span id="cb9-2"><a href=""></a>  <span class="at">theme =</span> bslib<span class="sc">::</span><span class="fu">bs_theme</span>(<span class="at">bootswatch =</span> <span class="st">"darkly"</span>)</span>
-<span id="cb9-3"><a href=""></a> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href=""></a> <span class="fu">fluidPage</span>(</span>
+<span id="cb11-2"><a href=""></a>  <span class="at">theme =</span> bslib<span class="sc">::</span><span class="fu">bs_theme</span>(<span class="at">bootswatch =</span> <span class="st">"darkly"</span>)</span>
+<span id="cb11-3"><a href=""></a> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="no-todo-es-bootstrap" class="slide level2">
 <h2>No todo es bootstrap</h2>
 <ul>
-<li><p>Shiny <a href="https://connect.appsilon.com/shiny-semantic-components/">Semantic</a> de Appsilon</p></li>
-<li><p>Shiny bulma (ej)</p></li>
+<li><p>Shiny <a href="https://connect.appsilon.com/shiny-semantic-components/">Semantic</a> de Appsilon (ejemplo de <a href="https://connect.appsilon.com/polluter-alert/">contaminación</a> en Polonia)</p></li>
+<li><p>Fluent UI (<a href="https://connect.appsilon.com/fluentui/">ejemplo</a>)</p></li>
+<li><p>Shiny bulma</p></li>
 </ul>
 </section>
 <section id="section-5" class="slide level2">
 <h2></h2>
 <p>Todas las funciones de <em>input</em>, <em>output</em> y <em>layout</em> generan HTML</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a>shiny<span class="sc">::</span><span class="fu">fluidPage</span>(</span>
+<span id="cb12-2"><a href=""></a>     shiny<span class="sc">::</span><span class="fu">textInput</span>(<span class="st">"texto"</span>, <span class="st">"Un poco de texto de prueba"</span>),</span>
+<span id="cb12-3"><a href=""></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="ejemplo-interactivo-simple-de-css-y-html" class="slide level2">
+<h2>Ejemplo interactivo simple de css y html</h2>
+<p><a href="https://www.w3schools.com/html/tryit.asp?filename=tryhtml_css_inline">css en w3schools</a></p>
 </section>
 <section id="section-6" class="slide level2">
 <h2></h2>
-<h4 id="ejemplo-interactivo-simple-de-css-y-html">Ejemplo interactivo simple de css y html</h4>
-<p><a href="https://www.w3schools.com/html/tryit.asp?filename=tryhtml_css_inline">css en w3schools</a></p>
-</section>
-<section id="section-7" class="slide level2">
-<h2></h2>
+<p><br></p>
 <ul>
-<li><p>Las aplicaciones ultimadamente se despliegan en un navegador web</p></li>
-<li><p>Podemos usar herramientas de diseño web para personalizar nuestras aplicaciones independientemente del código de R subyacente</p></li>
+<li>Las aplicaciones ultimadamente se despliegan en un navegador web</li>
+</ul>
+<p><br></p>
+<ul>
+<li>Podemos usar herramientas de diseño web para personalizar nuestras aplicaciones independientemente del código de R subyacente</li>
 </ul>
 </section>
 <section id="hola-mundo" class="slide level2">
@@ -756,7 +791,7 @@ Por suerte es posible generar la ilusión de <em>numerosas páginas</em> en una 
 <section id="material-de-interés" class="slide level2 section vertical-center">
 <h2>Material de interés</h2>
 </section>
-<section id="section-8" class="slide level2">
+<section id="section-7" class="slide level2">
 <h2></h2>
 <ul>
 <li><p>Shiny <a href="https://shiny.posit.co/r/articles/build/layout-guide/">Application layout guide</a></p></li>
@@ -766,6 +801,7 @@ Por suerte es posible generar la ilusión de <em>numerosas páginas</em> en una 
 <li><a href="https://rmarkdown-reinventartec-2022.netlify.app/">HTML</a></li>
 <li><a href="https://github.com/RLadies-BA/Reinventartec-2022/blob/main/Rmarkdown_ReinventarTec.Rmd">Código</a></li>
 </ul></li>
+<li><p><a href="https://www.youtube.com/watch?v=Y80iGc5Vjyc">HTML and css for R users</a> - Taller dictado por Albert Rapp</p></li>
 <li><p><a href="https://github.com/virginiagarciaalonso/rladiesba_shiny_book_club_4">Código de esta presentación :)</a></p></li>
 </ul>
 </section>
