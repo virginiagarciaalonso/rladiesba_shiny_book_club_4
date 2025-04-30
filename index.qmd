@@ -330,13 +330,26 @@ ui <- navbarPage(
 
 ## 2. Temas
 
+::: columns
+::: {.column width="65%"}
+
 - La configuración inicial que se aplica a un documento o en este caso, una aplicación.
 
 - Determina su estilo visual por defecto
 
 - Convenciones y estilos diseñados para distintos fines
 
+:::
+
+::: {.column width="35%"}
+![light/dark UI por Ryan David Curtis](https://cdn.dribbble.com/userupload/41984310/file/original-ba35543c42260c5be54d12b9e99f5039.gif)
+:::
+:::
+
 ## bslib
+
+<img src="https://rstudio.github.io/bslib/logo.png" align="right" height="108"/>
+
 
 - Paquete con funciones para cambiar los valores predeterminados
 
@@ -345,31 +358,51 @@ ui <- navbarPage(
 
 ## Aplicación en dark theme
 
-> 'darkly' de bootswatch y `thematic` que le aplica estos valores a figuras de ggplot, base, lattice, etc.
+> aplicamos 'darkly' de bootswatch con `bslib` y `thematic` para aplicarle los valores nuevos a figuras de ggplot, base, lattice, etc.
+
+
+```{r}
+#| eval: false
+
+ui <- fluidPage(
+  theme = bslib::bs_theme(bootswatch = "darkly"),
+  # el resto del ui...
+  )
+
+server <- function(input, output) {
+  thematic::thematic_shiny()
+  # el resto del servidor... 
+}
+
+```
 
 
 ## brand.yml
 
+<img src="https://posit-dev.github.io/brand-yml/logos/tall/brand-yml-tall-color.svg" align="right" height="108"/>
+
 Identidad visual portatil y simple para Shiny y Quarto
 
-::: columns
-::: {.column width="20%"}
-![](https://posit-dev.github.io/brand-yml/logos/tall/brand-yml-tall-color.svg)
-:::
-
-::: {.column width="80%"}
 
 - colores
 - logos
 - fuentes
 
-:::
-:::
+```{r}
+#| eval: false
+
+ui <- fluidPage(
+  theme = bslib::bs_theme(brand = "mi-archivo-brand.yml"),
+  # ... resto del UI
+)
+```
 
 
 ##
 
 ![](imgs/brand.png){.center}
+
+
 
 
 ## 3. Que hay detrás: componentes de estilo
@@ -427,8 +460,12 @@ Texto en una caja con relleno de color rosa
 
 ## bootstrap
 
-- Bootstrap es una colección de convenciones HTML, estilos CSS y fragmentos JS agrupados de forma práctica.
+<img src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo-shadow@2x.png" align="right" height="108"/>
 
+
+- Una colección de convenciones HTML, estilos CSS y fragmentos JS agrupados de forma práctica.
+
+- Las herramientas para 'front end' más usadas 
 
 ## Proyecto [bootswatch](https://bootswatch.com/)
 
@@ -444,23 +481,35 @@ Texto en una caja con relleno de color rosa
 
 ## No todo es bootstrap
 
-- Shiny [Semantic](https://connect.appsilon.com/shiny-semantic-components/) de Appsilon
+- Shiny [Semantic](https://connect.appsilon.com/shiny-semantic-components/) de Appsilon (ejemplo de [contaminación](https://connect.appsilon.com/polluter-alert/) en Polonia)
 
-- Shiny bulma (ej)
+- Fluent UI ([ejemplo](https://connect.appsilon.com/fluentui/))
+
+- Shiny bulma
+
 
 ##
 
 Todas las funciones de _input_, _output_ y _layout_ generan HTML
 
-## 
+```{r}
 
-#### Ejemplo interactivo simple de css y html
+shiny::fluidPage(
+     shiny::textInput("texto", "Un poco de texto de prueba"),
+)
+```
+
+##  Ejemplo interactivo simple de css y html
 
 [css en w3schools](https://www.w3schools.com/html/tryit.asp?filename=tryhtml_css_inline)
 
 ## 
 
+<br>
+
 - Las aplicaciones ultimadamente se despliegan en un navegador web
+
+<br>
 
 - Podemos usar herramientas de diseño web para personalizar nuestras aplicaciones independientemente del código de R subyacente  
 
@@ -482,6 +531,9 @@ Todas las funciones de _input_, _output_ y _layout_ generan HTML
     + [HTML](https://rmarkdown-reinventartec-2022.netlify.app/)
     + [Código](https://github.com/RLadies-BA/Reinventartec-2022/blob/main/Rmarkdown_ReinventarTec.Rmd)
     
+
+* [HTML and css for R users](https://www.youtube.com/watch?v=Y80iGc5Vjyc) - Taller dictado por Albert Rapp
+
 * [Código de esta presentación :)](https://github.com/virginiagarciaalonso/rladiesba_shiny_book_club_4)
 
 ## Gracias! {.section  .vertical-center}
