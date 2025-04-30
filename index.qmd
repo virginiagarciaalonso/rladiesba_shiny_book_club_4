@@ -536,4 +536,4 @@ shiny::fluidPage(
 
 * [Código de esta presentación :)](https://github.com/virginiagarciaalonso/rladiesba_shiny_book_club_4)
 
-## Gracias! {.section  .vertical-center}
+## Gracias!  {.section  .vertical-center}
